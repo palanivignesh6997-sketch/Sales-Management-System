@@ -15,7 +15,7 @@ product_name VARCHAR(30),
 gross_sales DECIMAL(12,2),
 received_amount DECIMAL(12,2) DEFAULT 0,
 pending_amount DECIMAL(12,2) GENERATED ALWAYS AS (gross_sales - received_amount) STORED,
-staus VARCHAR(10) CHECK (staus in ('Open','Closed')),
+staus VARCHAR(10) CHECK (status in ('Open','Closed')),
 
 CONSTRAINT F_Cust FOREIGN KEY (branch_id) REFERENCES branches (branch_id)
 );
